@@ -7,11 +7,11 @@
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
-        "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
-        "johnny-doe": "Johnny Doe",
-        "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "chen-jin-yang": "Chen Jin Yang",
+        "javin-chua": "Javin Chua",
+        "lee-yong-ning": "Lee Yong Ning",
+        "kyriel-mortel-abad": "Kyriel Mortel Abad",
+        "shashamin-chokjaroenwathanakul": "Shashamin Chokjaroenwathanakul"
       },
       "headingKeywords": {}
     },
@@ -136,11 +136,36 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/javin.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/jinyang.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/kyriel.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/shashamin.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/yongning.md",
+      "headings": {},
       "headingKeywords": {}
     },
     {
