@@ -149,7 +149,8 @@
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-flagship": "Project: Flagship",
+        "summary-of-contributions": "Summary of contributions"
       },
       "headingKeywords": {}
     },
