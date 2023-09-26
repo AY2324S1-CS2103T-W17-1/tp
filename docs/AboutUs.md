@@ -15,9 +15,9 @@ You can reach us at the email `e0958417[at]u.nus.edu`
 
 <img src="images/jinyang.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
+[[homepage](https://www.linkedin.com/in/chen-jin-yang-37baa8202/)]
 [[github](https://github.com/jinyang628)]
-[[portfolio](team/jinyang.md)]
+[[portfolio](team/jinyang628.md)]
 
 * Role: Project Advisor
 
@@ -44,14 +44,13 @@ You can reach us at the email `e0958417[at]u.nus.edu`
 ### Kyriel Mortel Abad
 
 <img src="images/kyriel.png" width="200px">
-
 [[github](http://github.com/s-kybound)]
 [[portfolio](team/kyriel.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
 
-### Shashamin Chokjaroenwathanakul 
+### Shashamin Chokjaroenwathanakul
 
 <img src="images/shashamin.png" width="200px">
 
