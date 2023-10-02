@@ -136,8 +136,12 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/javin.md",
-      "headings": {},
+      "src": "team/javinchua.md",
+      "title": "Javin's Project Portfolio Page",
+      "headings": {
+        "project-flagship": "Project: Flagship",
+        "summary-of-contributions": "Summary of contributions"
+      },
       "headingKeywords": {}
     },
     {
