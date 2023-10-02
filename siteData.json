@@ -141,8 +141,12 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/jinyang.md",
-      "headings": {},
+      "src": "team/jinyang628.md",
+      "title": "Chen Jin Yang's Project Portfolio Page",
+      "headings": {
+        "project-flagship": "Project: Flagship",
+        "summary-of-contributions": "Summary of contributions"
+      },
       "headingKeywords": {}
     },
     {
