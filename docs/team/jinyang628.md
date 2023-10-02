@@ -1,6 +1,6 @@
 ---
   layout: default.md
-  title: "John Doe's Project Portfolio Page"
+  title: "Chen Jin Yang's Project Portfolio Page"
 ---
 
 ## Project: Flagship
@@ -9,7 +9,14 @@ Flagship is a desktop application used to help aspiring students track internshi
 
 ## Summary of contributions
 
-* **Code contributed**: to be added soon (add a link to your code on tP code dashboard) [RepoSense link]()
+* **Code contributed**: 
+    * Refactored the AB3 models and interfaces so that they can be repurposed for Flagship
+
+        * E.g. Adding new parameters, renaming interfaces, etc.
+    
+    * Programmed the Create Command so that users can key in internship details 
+
+    * [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=authorship&tabAuthor=jinyang628&tabRepo=AY2324S1-CS2103T-W17-1%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
 
 * **Enhancements to existing features**:
   * to be added soon (Pull requests [\#1](), [\#2]())

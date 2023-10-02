@@ -25,3 +25,6 @@ docs/_markbind/logs/
 
 # Class files
 *.class
+
+# Bin files
+bin/*
