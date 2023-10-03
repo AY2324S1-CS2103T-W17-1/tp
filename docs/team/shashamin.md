@@ -52,5 +52,3 @@ Flagship is a desktop application used to help aspiring students track internshi
 
 * **Tools**:
   * to be added soon
-
-* _{feel free to can add/remove categories in the list above}_
