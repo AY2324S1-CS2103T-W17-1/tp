@@ -11,7 +11,7 @@ Flagship is a desktop application used to help aspiring students track internshi
 
 * **Code contributed**: 
     * Edited the sample data to be used in testing the programme.
-    
+
     * Programmed the List Command so that users can view all internship entries
 
     * Programmed the Read Command so that users can view a specific internship entry in the list as specified by an index.
