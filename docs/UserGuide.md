@@ -90,11 +90,17 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
-### Listing all persons : `list`
+### Listing all internships : `list`
 
-Shows a list of all persons in the address book.
+Shows a list of all internships in the address book.
 
 Format: `list`
+
+### Reading one internship entry : `read`
+
+Shows one internship entry in the address book as specified by the index.
+
+Format: `read INDEX`
 
 ### Editing a person : `edit`
 
