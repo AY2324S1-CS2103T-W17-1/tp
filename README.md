@@ -21,6 +21,7 @@ Valid Values: Yet to apply, Applied, In Progress, Accepted, Rejected.
 Purpose: Add a new internship entry.
 
 **Example:**
+Copy code
 user Input: create 
 Prompt: Enter the internship’s start date in DD/MM/YYYY format.
 user Input: 20/02/2001
