@@ -1,14 +1,94 @@
-[![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
-[![codecov](https://codecov.io/gh/AY2324S1-CS2103T-W17-1/tp/graph/badge.svg?token=I19XFB7BJK)](https://codecov.io/gh/AY2324S1-CS2103T-W17-1/tp)
-![Ui](docs/images/Ui.png)
+# Flagship Internship Manager
+Flagship Internship Manager allows you to track, manage, and organize internship entries efficiently. Here's a guide to understand and use the system.
 
-* This is **a sample project for Software Engineering (SE) students**.<br>
-  Example usages:
-  * as a starting point of a course project (as opposed to writing everything from scratch)
-  * as a case study
-* The project simulates an ongoing software project for a desktop application (called _AddressBook_) used for managing contact details.
-  * It is **written in OOP fashion**. It provides a **reasonably well-written** code base **bigger** (around 6 KLoC) than what students usually write in beginner-level SE modules, without being overwhelmingly big.
-  * It comes with a **reasonable level of user and developer documentation**.
-* It is named `AddressBook Level 3` (`AB3` for short) because it was initially created as a part of a series of `AddressBook` projects (`Level 1`, `Level 2`, `Level 3` ...).
-* For the detailed documentation of this project, see the **[Address Book Product Website](https://se-education.org/addressbook-level3)**.
-* This project is a **part of the se-education.org** initiative. If you would like to contribute code to this project, see [se-education.org](https://se-education.org#https://se-education.org/#contributing) for more info.
+## Data Types and Constraints
+### {startDate}:
+Format: DD/MM/YYYY
+Constraints: Must be valid date with exactly 2 characters for day and month, and 4 characters for the year. All segments must be integers.
+### {duration}:
+Format: Integer
+Constraints: Must be a positive integer.
+### {companyName}:
+Constraints: Cannot be empty.
+### {role}:
+Constraints: Cannot be empty.
+### {requirements}:
+Constraints: Must be separated by '|'. Cannot be empty or have duplicates. '|' is treated as a special character and cannot be part of a requirement.
+### {applicationStatus}:
+Valid Values: Yet to apply, Applied, In Progress, Accepted, Rejected.
+## Commands
+### 1. Create
+Purpose: Add a new internship entry.
+
+**Example:**
+Copy code
+user Input: create 
+Prompt: Enter the internship’s start date in DD/MM/YYYY format.
+user Input: 20/02/2001
+... [other prompts and inputs as described]
+
+**Success Output:**
+Here is the information of the entry:
+Start Date: {startDate}
+... [other fields displayed]
+
+**Error Messages:**
+The value entered for this field is invalid.
+This field is compulsory, please do not leave it empty.
+### 2. Read
+Purpose: Display details of a specific internship entry.
+
+
+**Example:**
+read 1
+
+**Success Output:**
+Here is the information of entry {number}:
+Start Date: {startDate}
+... [other fields displayed]
+
+**Error Messages:**
+There are no internship entries associated with {number}.
+“read” expects 1 numeric parameter.
+
+### 3. List
+Purpose: Display all internship entries.
+list
+
+**Success Output:**
+Here are your internship entries:
+... [entries displayed]
+
+**Error Message:**
+“list” expects no parameters.
+
+### 4. Update
+Purpose: Edit an existing internship entry.
+
+**Example:**
+user Input: update 1
+... [prompts and user inputs as described]
+
+**Success Output:**
+Entry at {number} has been updated. Exited editing mode.
+
+**Error Messages:**
+Error updating internship entry at {number}.
+“update” expects 1 numeric parameter.
+
+### 5. Delete
+Purpose: Remove an existing internship entry.
+
+delete {number}
+
+**Example:**
+delete 1
+
+**Success Output:**
+{companyName} at {number} is deleted.
+
+**Error Messages:**
+There are no internship entries associated with {number}.
+“delete” expects 1 numeric parameter.
+
+Thank you for using Flagship Internship Manager! If you have any feedback or issues, please contact support.
