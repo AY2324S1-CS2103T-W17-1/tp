@@ -71,7 +71,7 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/se-
 
 <puml src="diagrams/UiClassDiagram.puml" alt="Structure of the UI Component"/>
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `internshipListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `InternshipListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
 The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
 
@@ -80,7 +80,7 @@ The `UI` component,
 * executes user commands using the `Logic` component.
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
-* depends on some classes in the `Model` component, as it displays `internship` object residing in the `Model`.
+* depends on some classes in the `Model` component, as it displays `Internship` object residing in the `Model`.
 
 ### Logic component
 
@@ -103,7 +103,7 @@ How the `Logic` component works:
 
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-1. The command can communicate with the `Model` when it is executed (e.g. to delete a internship).
+1. The command can communicate with the `Model` when it is executed (e.g. to delete an internship).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
@@ -122,14 +122,14 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `internship` objects (which are contained in a `UniqueinternshipList` object).
-* stores the currently 'selected' `internship` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<internship>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* stores the address book data i.e., all `Internship` objects (which are contained in a `UniqueInternshipList` object).
+* stores the currently 'selected' `Internship` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Internship>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
 <box type="info" seamless>
 
-**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `internship` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `internship` needing their own `Tag` objects.<br>
+**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Internship` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Internship` needing their own `Tag` objects.<br>
 
 <puml src="diagrams/BetterModelClassDiagram.puml" width="450" />
 
@@ -270,7 +270,7 @@ _{Explain here how the data archiving feature will be implemented}_
 **Target user profile**:
 
 * has a need to manage a significant number of internships
-* is a student applying fro internships
+* is a student applying for internships
 * prefer desktop apps over other types
 * can type fast
 * prefers short, concise, and quick-reference style
@@ -298,7 +298,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a internship**
+**Use case: Delete an internship**
 
 **MSS**
 
@@ -382,9 +382,9 @@ Given below are instructions to test the app manually.
 
 1. _{ more test cases …​ }_
 
-### Deleting a internship
+### Deleting an internship
 
-1. Deleting a internship while all internships are being shown
+1. Deleting an internship while all internships are being shown
 
    1. Prerequisites: List all internships using the `list` command. Multiple internships in the list.
 
