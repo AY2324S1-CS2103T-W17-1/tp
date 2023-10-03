@@ -90,11 +90,17 @@ Examples:
 * `create c/Jane Street ro/Coffee maker a/Yet to apply s/20/01/2023 d/3 re/C++ re/Coffee`
 * `create c/Citadel ro/Coffee pourer a/Applied s/24/04/2022 d/1`
 
-### Listing all persons : `list`
+### Listing all internships : `list`
 
-Shows a list of all persons in the address book.
+Shows a list of all internships in the address book.
 
 Format: `list`
+
+### Reading one internship entry : `read`
+
+Shows one internship entry in the address book as specified by the index.
+
+Format: `read INDEX`
 
 ### Editing a person : `edit`
 
