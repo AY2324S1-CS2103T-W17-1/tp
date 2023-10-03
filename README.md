@@ -91,4 +91,4 @@ delete 1
 There are no internship entries associated with {number}.
 “delete” expects 1 numeric parameter.
 
-Thank you for using Flagship Internship Manager!
+Thank you for using Flagship Internship Manager! Contact support if you need assistance.
