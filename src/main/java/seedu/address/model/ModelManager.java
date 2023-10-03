@@ -154,7 +154,7 @@ public class ModelManager implements Model {
 
     @Override
     public ObservableList<Internship> getFilteredInternshipList() {
-        return null;
+        return filteredInternships;
     }
 
     @Override

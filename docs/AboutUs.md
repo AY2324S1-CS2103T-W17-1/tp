@@ -26,7 +26,7 @@ You can reach us at the email `e0958417@u.nus.edu`
 <img src="images/javinchua.png" width="200px">
 
 [[github](http://github.com/javinchua)]
-[[portfolio](team/javin.md)]
+[[portfolio](team/javinchua.md)]
 
 * Role: Team Lead
 * Responsibilities: UI

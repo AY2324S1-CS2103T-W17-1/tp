@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalInternships.JANESTREET;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
@@ -18,8 +19,10 @@ import org.junit.jupiter.api.Test;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.model.internship.Internship;
+import seedu.address.model.internship.exceptions.DuplicateInternshipException;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
+import seedu.address.testutil.InternshipBuilder;
 import seedu.address.testutil.PersonBuilder;
 
 public class AddressBookTest {
@@ -44,14 +47,13 @@ public class AddressBookTest {
     }
 
     @Test
-    public void resetData_withDuplicatePersons_throwsDuplicatePersonException() {
-        // Two persons with the same identity fields
-        Person editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
-                .build();
-        List<Person> newPersons = Arrays.asList(ALICE, editedAlice);
-        AddressBookStub newData = new AddressBookStub(newPersons);
+    public void resetData_withDuplicateInternships_throwsDuplicateInternshipException() {
+        // Two Internships with the same identity fields
+        Internship editedJaneStreet = new InternshipBuilder(JANESTREET).withDuration("4").build();
+        List<Internship> newInternships = Arrays.asList(JANESTREET, editedJaneStreet);
+        AddressBookStub newData = new AddressBookStub(newInternships);
 
-        assertThrows(DuplicatePersonException.class, () -> addressBook.resetData(newData));
+        assertThrows(DuplicateInternshipException.class, () -> addressBook.resetData(newData));
     }
 
     @Test
@@ -94,14 +96,19 @@ public class AddressBookTest {
      */
     private static class AddressBookStub implements ReadOnlyAddressBook {
         private final ObservableList<Person> persons = FXCollections.observableArrayList();
-
-        AddressBookStub(Collection<Person> persons) {
-            this.persons.setAll(persons);
+        private final ObservableList<Internship> internships = FXCollections.observableArrayList();
+        AddressBookStub(Collection<Internship> internships) {
+            this.internships.setAll(internships);
         }
 
         @Override
         public ObservableList<Person> getPersonList() {
             return persons;
+        }
+
+        @Override
+        public ObservableList<Internship> getInternshipList() {
+            return internships;
         }
     }
 

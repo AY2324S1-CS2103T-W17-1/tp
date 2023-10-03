@@ -58,11 +58,19 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Replaces the contents of the internship list with {@code internships}.
+     * {@code internships} must not contain duplicate internships.
+     */
+    public void setInternships(List<Internship> internships) {
+        this.internships.setInternships(internships);
+    }
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
-
+        setInternships(newData.getInternshipList());
         setPersons(newData.getPersonList());
     }
 
@@ -139,6 +147,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         return persons.asUnmodifiableObservableList();
     }
 
+    @Override
     public ObservableList<Internship> getInternshipList() {
         return this.internships.asUnmodifiableObservableList();
     }
