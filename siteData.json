@@ -165,8 +165,12 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/kyriel.md",
-      "headings": {},
+      "src": "team/s-kybound.md",
+      "title": "Kyriel's Project Portfolio Page",
+      "headings": {
+        "project-flagship": "Project: Flagship",
+        "summary-of-contributions": "Summary of contributions"
+      },
       "headingKeywords": {}
     },
     {
