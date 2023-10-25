@@ -1,0 +1,25 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+
+title Command Parsing Stage
+
+package "Internship Book" {
+    class InternshipBookParser as "InternshipBookParser"
+}
+
+package "Command" {
+    class SortCommand as "SortCommand"
+}
+
+InternshipBookParser -[hidden]right-> SortCommand
+
+hide SortCommand
+
+class UserInput as "User Input: sort ro/ASC"
+
+UserInput -down-> InternshipBookParser : parses
+
+@enduml

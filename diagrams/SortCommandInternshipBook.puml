@@ -1,0 +1,30 @@
+@startuml
+
+class InternshipBook {
+  - internships: List<Internship>
+  - currentComparator: Comparator<Internship>
+}
+
+class Internship {
+  - companyName: CompanyName
+  - role: Role
+  - applicationStatus: ApplicationStatus
+  - deadline: Deadline
+  - startDate: StartDate
+  - duration: Duration
+}
+
+class Comparator<Internship> <<interface>> {
+  + compare(o1: Internship, o2: Internship): int
+}
+
+InternshipBook --> Internship: contains*
+InternshipBook --> Comparator
+
+note right of InternshipBook
+  The 'currentComparator' holds
+  the current sorting mechanism
+  for the 'internships' list.
+end note
+
+@enduml

@@ -53,6 +53,8 @@
         "implementation": "Implementation",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "create-command": "Create command",
+        "sort-feature": "Sort feature",
+        "sort-implementation": "Sort Implementation",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
