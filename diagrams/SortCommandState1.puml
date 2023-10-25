@@ -1,25 +1,23 @@
 @startuml
 
-object "InternshipList" as IL {
-  internships: [Internship3, Internship1, Internship2]
+object "<u>:InternshipModelManager" as IL {
   currentComparator: BY_ROLE
 }
 
-object "Internship3" as I3 {
+object "<u>:Internship" as I3 {
   companyName: "Optiver"
   role: "Algorithm Engineer"
 }
 
-object "Internship1" as I1 {
+object "<u>:Internship" as I1 {
   companyName: "Citadel"
   role: "Site Reliability Engineer"
 }
 
-object "Internship2" as I2 {
+object "<u>:Internship" as I2 {
   companyName: "Jane Street"
   role: "Software Engineer"
 }
-
 IL -down-> I3
 IL -down-> I1
 IL -down-> I2
