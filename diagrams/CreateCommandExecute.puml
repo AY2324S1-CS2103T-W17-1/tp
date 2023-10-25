@@ -1,0 +1,21 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+
+title Command Execution Stage
+
+package "Internship Book" {
+    class InternshipLogicManager as "InternshipLogicManager"
+    class InternshipStorage as "InternshipStorage"
+}
+
+package "Command" {
+    class CreateCommand as "CreateCommand"
+}
+
+InternshipLogicManager -down-> CreateCommand : executes
+CreateCommand -right-> InternshipStorage : checks duplicates\nand stores if unique
+
+@enduml
