@@ -1,0 +1,26 @@
+@startuml
+
+object "<u>:InternshipModelManager" as IL {
+  currentComparator: BY_ROLE
+}
+
+object "<u>:Internship" as I1 {
+  companyName: "Citadel"
+  role: "Site Reliability Engineer"
+}
+
+object "<u>:Internship" as I2 {
+  companyName: "Jane Street"
+  role: "Software Engineer"
+}
+
+object "<u>:Internship" as I3 {
+  companyName: "Optiver"
+  role: "Algorithm Engineer"
+}
+
+IL -down-> I3
+IL -down-> I1
+IL -down-> I2
+
+@enduml
