@@ -1,0 +1,25 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+
+title Command Parsing Stage
+
+package "Internship Book" {
+    class InternshipBookParser as "InternshipBookParser"
+}
+
+package "Command" {
+    class DeleteCommand as "DeleteCommand"
+}
+
+InternshipBookParser -[hidden]right-> DeleteCommand
+
+hide DeleteCommand
+
+class UserInput as "delete 1"
+
+UserInput -down-> InternshipBookParser : parses
+
+@enduml

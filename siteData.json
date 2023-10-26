@@ -53,6 +53,7 @@
         "implementation": "Implementation",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "create-command": "Create command",
+        "delete-command": "Delete command",
         "sort-feature": "Sort feature",
         "sort-implementation": "Sort Implementation",
         "modify-feature": "Modify feature",

@@ -1,0 +1,23 @@
+@startuml
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+
+title Internship Entry Deletion Stage
+
+package "Internship Book" {
+    class InternshipStorage as "InternshipStorage"
+}
+
+class InternshipEntry as "InternshipEntry:\nJane Street, Coffee maker"
+
+InternshipStorage -[hidden]right-> InternshipEntry
+
+hide InternshipEntry
+
+class StorageAction as "Storage Action: Entry Removed Successfully"
+
+StorageAction -up-> InternshipStorage : deletes
+
+@enduml

@@ -3,8 +3,8 @@
 skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
-participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
+participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
 participant ":DeleteCommandParser" as DeleteCommandParser LOGIC_COLOR
 participant "d:DeleteCommand" as DeleteCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
@@ -14,20 +14,20 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("delete 1")
-activate LogicManager
+[-> InternshipLogicManager : execute("delete 1")
+activate InternshipLogicManager
 
-LogicManager -> AddressBookParser : parseCommand("delete 1")
-activate AddressBookParser
+InternshipLogicManager -> InternshipBookParser : parseCommand("delete 1")
+activate InternshipBookParser
 
 create DeleteCommandParser
-AddressBookParser -> DeleteCommandParser
+InternshipBookParser -> DeleteCommandParser
 activate DeleteCommandParser
 
-DeleteCommandParser --> AddressBookParser
+DeleteCommandParser --> InternshipBookParser
 deactivate DeleteCommandParser
 
-AddressBookParser -> DeleteCommandParser : parse("1")
+InternshipBookParser -> DeleteCommandParser : parse("1")
 activate DeleteCommandParser
 
 create DeleteCommand
@@ -37,34 +37,37 @@ activate DeleteCommand
 DeleteCommand --> DeleteCommandParser : d
 deactivate DeleteCommand
 
-DeleteCommandParser --> AddressBookParser : d
+DeleteCommandParser --> InternshipBookParser : d
 deactivate DeleteCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-DeleteCommandParser -[hidden]-> AddressBookParser
+DeleteCommandParser -[hidden]-> InternshipBookParser
 destroy DeleteCommandParser
 
-AddressBookParser --> LogicManager : d
-deactivate AddressBookParser
+InternshipBookParser --> InternshipLogicManager : d
+deactivate InternshipBookParser
 
-LogicManager -> DeleteCommand : execute()
+InternshipLogicManager -> DeleteCommand : execute()
 activate DeleteCommand
+alt index out of bounds
+    DeleteCommand -> InternshipLogicManager
+else
+    DeleteCommand -> Model : deleteInternship(1)
+    activate Model
 
-DeleteCommand -> Model : deletePerson(1)
-activate Model
+    Model --> DeleteCommand
+    deactivate Model
 
-Model --> DeleteCommand
-deactivate Model
+    create CommandResult
+    DeleteCommand -> CommandResult
+    activate CommandResult
 
-create CommandResult
-DeleteCommand -> CommandResult
-activate CommandResult
+    CommandResult --> DeleteCommand
+    deactivate CommandResult
 
-CommandResult --> DeleteCommand
-deactivate CommandResult
-
-DeleteCommand --> LogicManager : result
+    DeleteCommand --> InternshipLogicManager : result
+end
 deactivate DeleteCommand
 
-[<--LogicManager
-deactivate LogicManager
+[<--InternshipLogicManager
+deactivate InternshipLogicManager
 @enduml
