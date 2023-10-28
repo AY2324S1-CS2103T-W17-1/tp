@@ -18,7 +18,7 @@ public class CompanyName implements Comparable<CompanyName> {
      */
     public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    private final String companyName;
+    public final String companyName;
 
     /**
      * Constructs a {@code CompanyName}.
@@ -56,10 +56,6 @@ public class CompanyName implements Comparable<CompanyName> {
 
         CompanyName otherCompanyName = (CompanyName) other;
         return this.companyName.equals(otherCompanyName.companyName);
-    }
-
-    public String getCompanyName() {
-        return this.companyName;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class FilterCommand extends InternshipCommand {
     public static final String COMMAND_WORD = "filter";
     public static final String DEFAULT_KEYWORD = "default";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters the internship list.\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters the internship list."
             + "Parameters 1: PREFIX/KEYWORDS\n"
             + "Available categories are:\n"
             + PREFIX_COMPANY_NAME + " - Company Name\n"
@@ -35,7 +35,7 @@ public class FilterCommand extends InternshipCommand {
             + PREFIX_DURATION + " - Duration\n"
             + "Example 1: " + COMMAND_WORD + " " + PREFIX_ROLE + "Google\n"
             + "Example 2: " + COMMAND_WORD + " " + PREFIX_DURATION + "2-3\n"
-            + "To reset filters: " + COMMAND_WORD + " " + DEFAULT_KEYWORD;
+            + "To reset filters: " + COMMAND_WORD + DEFAULT_KEYWORD;
 
     private final Predicate<Internship> predicate;
 

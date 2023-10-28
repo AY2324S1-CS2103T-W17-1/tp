@@ -12,7 +12,7 @@ public class Requirement {
     public static final String MESSAGE_CONSTRAINTS = "Requirements cannot be empty";
     public static final String VALIDATION_REGEX = ".+\\S.+";
 
-    private final String requirementName;
+    public final String requirementName;
 
     /**
      * Constructs a {@code Requirement}.
@@ -52,14 +52,11 @@ public class Requirement {
         return this.requirementName.hashCode();
     }
 
-    public String getRequirementName() {
-        return this.requirementName;
-    }
-
     /**
      * Format state as text for viewing.
      */
     public String toString() {
         return '[' + this.requirementName + ']';
     }
+
 }

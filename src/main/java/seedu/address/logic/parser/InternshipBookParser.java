@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.CreateCommand;
 import seedu.address.logic.commands.DeleteCommand;
-import seedu.address.logic.commands.FilterCommand;
 import seedu.address.logic.commands.InternshipCommand;
 import seedu.address.logic.commands.ModifyCommand;
 import seedu.address.logic.commands.SortCommand;
@@ -61,9 +60,6 @@ public class InternshipBookParser {
 
         case SortCommand.COMMAND_WORD:
             return new SortCommandParser().parse(arguments);
-
-        case FilterCommand.COMMAND_WORD:
-            return new FilterCommandParser().parse(arguments);
 
         default:
             logger.finer("This user input caused a ParseException: " + userInput);

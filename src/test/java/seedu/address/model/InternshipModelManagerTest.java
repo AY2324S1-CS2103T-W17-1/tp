@@ -124,7 +124,7 @@ public class InternshipModelManagerTest {
 
         // different filteredList -> returns false
 
-        String[] keywords = JANESTREET.getCompanyNameString().split("\\s+");
+        String[] keywords = JANESTREET.getCompanyName().companyName.split("\\s+");
         internshipModelManager.updateFilteredInternshipList(new NameContainsKeywordsPredicate(Arrays.asList(keywords)));
         assertFalse(internshipModelManager.equals(new InternshipModelManager(internshipBook, userPrefs)));
 

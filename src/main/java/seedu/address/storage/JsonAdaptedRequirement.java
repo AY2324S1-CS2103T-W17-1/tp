@@ -25,7 +25,7 @@ class JsonAdaptedRequirement {
      * Converts a given {@code Tag} into this class for Jackson use.
      */
     public JsonAdaptedRequirement(Requirement source) {
-        requirementName = source.getRequirementName();
+        requirementName = source.requirementName;
     }
 
     @JsonValue

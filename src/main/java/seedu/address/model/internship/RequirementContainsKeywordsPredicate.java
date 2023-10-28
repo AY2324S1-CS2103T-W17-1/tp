@@ -20,7 +20,7 @@ public class RequirementContainsKeywordsPredicate implements Predicate<Internshi
     public boolean test(Internship internship) {
         return keywords.stream()
                 .anyMatch(keyword -> internship.getRequirements().stream().anyMatch(
-                        requirement -> StringUtil.containsWordIgnoreCase(requirement.getRequirementName(), keyword)));
+                        requirement -> StringUtil.containsWordIgnoreCase(requirement.requirementName, keyword)));
     }
 
     @Override

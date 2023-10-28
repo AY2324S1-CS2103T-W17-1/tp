@@ -110,27 +110,11 @@ public class Internship {
     }
 
     /**
-     * Returns string representation of the internship entry's role.
+     * Returns string representation of the internship's role
      */
     public String getRoleString() {
-        return this.role.getRole();
+        return this.role.toString();
     }
-
-    /**
-     * Returns string representation of the internship entry's company name.
-     */
-    public String getCompanyNameString() {
-        return this.companyName.getCompanyName();
-    }
-
-    /**
-     * Returns string representation of the internship entry's duration.
-     */
-    public String getDurationString() {
-        return this.duration.getDuration();
-    }
-
-
 
     /**
      * Returns true if both persons have the same identity and data fields.

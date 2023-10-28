@@ -32,14 +32,14 @@ public class InternshipUtil {
      */
     public static String getInternshipDetails(Internship internship) {
         StringBuilder sb = new StringBuilder();
-        sb.append(PREFIX_COMPANY_NAME + internship.getCompanyNameString() + " ");
+        sb.append(PREFIX_COMPANY_NAME + internship.getCompanyName().companyName + " ");
         sb.append(PREFIX_ROLE + internship.getRole().toString() + " ");
         sb.append(PREFIX_APPLICATION_STATUS + internship.getApplicationStatus().applicationStatus + " ");
         sb.append(PREFIX_DEADLINE + internship.getDeadline().toString() + " ");
         sb.append(PREFIX_START_DATE + internship.getStartDate().toString() + " ");
-        sb.append(PREFIX_DURATION + internship.getDurationString() + " ");
+        sb.append(PREFIX_DURATION + internship.getDuration().duration + " ");
         internship.getRequirements().stream().forEach(
-            s -> sb.append(PREFIX_REQUIREMENT + s.getRequirementName() + " ")
+            s -> sb.append(PREFIX_REQUIREMENT + s.requirementName + " ")
         );
         return sb.toString();
     }
@@ -50,8 +50,7 @@ public class InternshipUtil {
     public static String getEditInternshipDescriptorDetails(EditInternshipDescriptor descriptor) {
         StringBuilder sb = new StringBuilder();
         descriptor.getCompanyName()
-                .ifPresent(companyName -> sb.append(PREFIX_COMPANY_NAME).append(companyName.getCompanyName())
-                        .append(" "));
+                .ifPresent(companyName -> sb.append(PREFIX_COMPANY_NAME).append(companyName.companyName).append(" "));
         descriptor.getRole().ifPresent(role -> sb.append(PREFIX_ROLE).append(role.toString()).append(" "));
         descriptor.getApplicationStatus()
                 .ifPresent(applicationStatus -> sb
@@ -62,13 +61,13 @@ public class InternshipUtil {
         descriptor.getStartDate()
                 .ifPresent(startDate -> sb.append(PREFIX_START_DATE).append(startDate.toString()).append(" "));
         descriptor.getDuration()
-                .ifPresent(duration -> sb.append(PREFIX_DURATION).append(duration.getDuration()).append(" "));
+                .ifPresent(duration -> sb.append(PREFIX_DURATION).append(duration.duration).append(" "));
         if (descriptor.getRequirements().isPresent()) {
             Set<Requirement> requirements = descriptor.getRequirements().get();
             if (requirements.isEmpty()) {
                 sb.append(PREFIX_REQUIREMENT);
             } else {
-                requirements.forEach(s -> sb.append(PREFIX_REQUIREMENT).append(s.getRequirementName()).append(" "));
+                requirements.forEach(s -> sb.append(PREFIX_REQUIREMENT).append(s.requirementName).append(" "));
             }
         }
         return sb.toString();

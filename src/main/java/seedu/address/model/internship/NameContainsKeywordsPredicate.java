@@ -20,7 +20,7 @@ public class NameContainsKeywordsPredicate implements Predicate<Internship> {
     public boolean test(Internship internship) {
         return keywords.stream()
                 .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(internship
-                        .getCompanyNameString(), keyword));
+                        .getCompanyName().companyName, keyword));
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Duration implements Comparable<Duration> {
     public static final String MESSAGE_CONSTRAINTS =
             "Internship durations should only contain positive numbers representing months and should not be blank";
     public static final String VALIDATION_REGEX = "[1-9]\\d*";
-    private final String duration;
+    public final String duration;
 
     /**
      * Constructs a {@code Duration}.
@@ -57,9 +57,6 @@ public class Duration implements Comparable<Duration> {
         return this.duration.hashCode();
     }
 
-    public String getDuration() {
-        return this.duration;
-    }
     @Override
     public int compareTo(Duration other) {
         return Integer.compare(Integer.parseInt(this.duration), Integer.parseInt(other.duration));
