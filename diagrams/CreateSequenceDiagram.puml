@@ -1,0 +1,71 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box InternshipLogic LOGIC_COLOR_T1
+participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
+participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
+participant ":CreateCommandParser" as CreateCommandParser LOGIC_COLOR
+participant "d:CreateCommand" as CreateCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box InternshipModel MODEL_COLOR_T1
+participant ":InternshipModel" as InternshipModel MODEL_COLOR
+end box
+
+[-> InternshipLogicManager : execute("create c/Google ro/SWE ...")
+activate InternshipLogicManager
+
+InternshipLogicManager -> InternshipBookParser : parseCommand("create c/Google ro/SWE ...")
+activate InternshipBookParser
+
+create CreateCommandParser
+InternshipBookParser -> CreateCommandParser
+activate CreateCommandParser
+
+CreateCommandParser --> InternshipBookParser
+deactivate CreateCommandParser
+
+InternshipBookParser -> CreateCommandParser : parse("c/Google ro/SWE ...")
+activate CreateCommandParser
+
+create CreateCommand
+CreateCommandParser -> CreateCommand
+activate CreateCommand
+
+CreateCommand --> CreateCommandParser : c
+deactivate CreateCommand
+
+CreateCommandParser --> InternshipBookParser : c
+deactivate CreateCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+CreateCommandParser -[hidden]-> InternshipBookParser
+destroy CreateCommandParser
+
+InternshipBookParser --> InternshipLogicManager : c
+deactivate InternshipBookParser
+
+InternshipLogicManager -> CreateCommand : execute()
+activate CreateCommand
+
+CreateCommand -> InternshipModel : createInternship(toAdd)
+activate InternshipModel
+
+InternshipModel --> CreateCommand
+deactivate InternshipModel
+
+create CommandResult
+CreateCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> CreateCommand
+deactivate CommandResult
+
+CreateCommand --> InternshipLogicManager : commandResult
+
+deactivate CreateCommand
+
+[<--InternshipLogicManager
+deactivate InternshipLogicManager
+@enduml

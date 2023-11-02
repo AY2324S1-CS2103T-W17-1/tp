@@ -10,16 +10,10 @@ package "Internship Book" {
     class InternshipBookParser as "InternshipBookParser"
 }
 
-package "Command" {
-    class CreateCommand as "CreateCommand"
-}
-
-InternshipBookParser -[hidden]right-> CreateCommand
-
 hide CreateCommand
 
-class UserInput as "User Input: create c/Jane Street ro/Coffee maker..."
+class UserInput as "create c/Google ro/SWE..."
 
-UserInput -down-> InternshipBookParser : parses
+UserInput -right-> InternshipBookParser : parses
 
 @enduml

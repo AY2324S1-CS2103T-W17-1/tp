@@ -48,7 +48,7 @@
         "ui-component": "UI component",
         "logic-component": "Logic component",
         "model-component": "Model component",
-        "storage-component": "Storage component",
+        "internshipstorage-component": "InternshipStorage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",

@@ -4,40 +4,40 @@ skinparam arrowThickness 1.1
 skinparam arrowColor STORAGE_COLOR
 skinparam classBackgroundColor STORAGE_COLOR
 
-package Storage as StoragePackage {
+package InternshipStorage as StoragePackage {
 
-package "UserPrefs Storage" #F4F6F6{
-Class "<<interface>>\nUserPrefsStorage" as UserPrefsStorage
-Class JsonUserPrefsStorage
+package "InternshipUserPrefs Storage" #F4F6F6{
+Class "<<interface>>\nInternshipUserPrefsStorage" as UserPrefsStorage
+Class JsonInternshipUserPrefsStorage
 }
 
-Class "<<interface>>\nStorage" as Storage
-Class StorageManager
+Class "<<interface>>\nInternshipStorage" as InternshipStorage
+Class InternshipStorageManager
 
-package "AddressBook Storage" #F4F6F6{
-Class "<<interface>>\nAddressBookStorage" as AddressBookStorage
-Class JsonAddressBookStorage
-Class JsonSerializableAddressBook
-Class JsonAdaptedPerson
-Class JsonAdaptedTag
+package "InternshipBook Storage" #F4F6F6{
+Class "<<interface>>\nInternshipBookStorage" as InternshipBookStorage
+Class JsonInternshipBookStorage
+Class JsonSerializableInternshipBook
+Class JsonAdaptedInternship
+Class JsonAdaptedRequirement
 }
 
 }
 
 Class HiddenOutside #FFFFFF
-HiddenOutside ..> Storage
+HiddenOutside ..> InternshipStorage
 
-StorageManager .up.|> Storage
-StorageManager -up-> "1" UserPrefsStorage
-StorageManager -up-> "1" AddressBookStorage
+InternshipStorageManager .up.|> InternshipStorage
+InternshipStorageManager -up-> "1" UserPrefsStorage
+InternshipStorageManager -up-> "1" InternshipBookStorage
 
-Storage -left-|> UserPrefsStorage
-Storage -right-|> AddressBookStorage
+InternshipStorage -left-|> UserPrefsStorage
+InternshipStorage -right-|> InternshipBookStorage
 
-JsonUserPrefsStorage .up.|> UserPrefsStorage
-JsonAddressBookStorage .up.|> AddressBookStorage
-JsonAddressBookStorage ..> JsonSerializableAddressBook
-JsonSerializableAddressBook --> "*" JsonAdaptedPerson
-JsonAdaptedPerson --> "*" JsonAdaptedTag
+JsonInternshipUserPrefsStorage .up.|> UserPrefsStorage
+JsonInternshipBookStorage .up.|> InternshipBookStorage
+JsonInternshipBookStorage ..> JsonSerializableInternshipBook
+JsonSerializableInternshipBook --> "*" JsonAdaptedInternship
+JsonAdaptedInternship --> "*" JsonAdaptedRequirement
 
 @enduml
