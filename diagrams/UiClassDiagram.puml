@@ -8,53 +8,58 @@ package UI <<Rectangle>>{
 Class "<<interface>>\nUi" as Ui
 Class "{abstract}\nUiPart" as UiPart
 Class UiManager
-Class MainWindow
+Class InternshipMainWindow
 Class HelpWindow
 Class ResultDisplay
-Class PersonListPanel
-Class PersonCard
+Class InternshipListPanel
+Class InternshipCard
 Class StatusBarFooter
 Class CommandBox
+Class PredicateComparatorDisplay
 }
 
-package Model <<Rectangle>> {
+package InternshipModel <<Rectangle>> {
 Class HiddenModel #FFFFFF
 }
 
-package Logic <<Rectangle>> {
+package InternshipLogic <<Rectangle>> {
 Class HiddenLogic #FFFFFF
 }
+
+Class "<<interface>>\nComandExecuter" as CommandExecuter
 
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Ui
 
 UiManager .left.|> Ui
-UiManager -down-> "1" MainWindow
-MainWindow *-down->  "1" CommandBox
-MainWindow *-down-> "1" ResultDisplay
-MainWindow *-down-> "1" PersonListPanel
-MainWindow *-down-> "1" StatusBarFooter
-MainWindow --> "0..1" HelpWindow
+UiManager -down-> "1" InternshipMainWindow
+InternshipMainWindow *-down->  "1" CommandBox
+InternshipMainWindow *-down-> "1" ResultDisplay
+InternshipMainWindow *-down-> "1" InternshipListPanel
+InternshipMainWindow *-down-> "1" StatusBarFooter
+InternshipMainWindow *-down-> "1" PredicateComparatorDisplay
+InternshipMainWindow --> "0..1" HelpWindow
 
-PersonListPanel -down-> "*" PersonCard
+InternshipListPanel -down-> "*" InternshipCard
 
-MainWindow -left-|> UiPart
+InternshipMainWindow -left-|> UiPart
 
 ResultDisplay --|> UiPart
 CommandBox --|> UiPart
-PersonListPanel --|> UiPart
-PersonCard --|> UiPart
+InternshipListPanel --|> UiPart
 StatusBarFooter --|> UiPart
 HelpWindow --|> UiPart
 
-PersonCard ..> Model
-UiManager -right-> Logic
-MainWindow -left-> Logic
+CommandBox ..> CommandExecuter
+InternshipCard ..> InternshipModel
+CommandExecuter ..> InternshipLogic
+UiManager -right-> InternshipLogic
+InternshipMainWindow -left-> InternshipLogic
 
-PersonListPanel -[hidden]left- HelpWindow
+InternshipListPanel -[hidden]left- HelpWindow
 HelpWindow -[hidden]left- CommandBox
-CommandBox -[hidden]left- ResultDisplay
+CommandBox -[hidden]left- HelpWindow
 ResultDisplay -[hidden]left- StatusBarFooter
 
-MainWindow -[hidden]-|> UiPart
+InternshipMainWindow -[hidden]-|> UiPart
 @enduml
