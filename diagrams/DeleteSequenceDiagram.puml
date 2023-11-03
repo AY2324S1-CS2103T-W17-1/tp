@@ -11,7 +11,7 @@ participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-participant ":Model" as Model MODEL_COLOR
+participant ":InternshipModel" as Model MODEL_COLOR
 end box
 
 [-> InternshipLogicManager : execute("delete 1")
@@ -48,24 +48,20 @@ deactivate InternshipBookParser
 
 InternshipLogicManager -> DeleteCommand : execute()
 activate DeleteCommand
-alt index out of bounds
-    DeleteCommand -> InternshipLogicManager
-else
-    DeleteCommand -> Model : deleteInternship(1)
-    activate Model
+DeleteCommand -> Model : deleteInternship(1)
+activate Model
 
-    Model --> DeleteCommand
-    deactivate Model
+Model --> DeleteCommand
+deactivate Model
 
-    create CommandResult
-    DeleteCommand -> CommandResult
-    activate CommandResult
+create CommandResult
+DeleteCommand -> CommandResult
+activate CommandResult
 
-    CommandResult --> DeleteCommand
-    deactivate CommandResult
+CommandResult --> DeleteCommand
+deactivate CommandResult
 
-    DeleteCommand --> InternshipLogicManager : result
-end
+DeleteCommand --> InternshipLogicManager : result
 deactivate DeleteCommand
 
 [<--InternshipLogicManager

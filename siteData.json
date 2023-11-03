@@ -51,7 +51,6 @@
         "internshipstorage-component": "InternshipStorage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "create-command": "Create command",
         "delete-command": "Delete command",
         "sort-feature": "Sort feature",
@@ -136,7 +135,7 @@
     },
     {
       "src": "index.md",
-      "title": "",
+      "title": "Flagship",
       "headings": {
         "flagship": "Flagship"
       },
