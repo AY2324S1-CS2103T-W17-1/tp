@@ -128,6 +128,7 @@
         "filter-internships-by-name-and-keyword-filter": "Filter Internships by Name and Keyword: filter",
         "sort-internships-by-category-and-order-sort": "Sort Internships by Category and Order: sort",
         "deleting-an-internship-delete": "Deleting an Internship: delete",
+        "expected-output": "Expected Output:\n",
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
         "faq": "FAQ",
