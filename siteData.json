@@ -125,7 +125,7 @@
         "commands": "Commands",
         "creating-an-internship-create": "Creating an Internship: create",
         "editing-an-internship-modify": "Editing an Internship: modify",
-        "filter-internships-by-name-and-keyword-filter": "Filter Internships by Name and Keyword: filter",
+        "filter-internships-by-category-and-keyword-range-filter": "Filter Internships by Category and Keyword/Range: filter",
         "sort-internships-by-category-and-order-sort": "Sort Internships by Category and Order: sort",
         "deleting-an-internship-delete": "Deleting an Internship: delete",
         "expected-output": "Expected Output:\n",
