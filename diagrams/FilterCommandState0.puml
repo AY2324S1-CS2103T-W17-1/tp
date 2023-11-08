@@ -1,5 +1,5 @@
 @startuml
-
+!pragma layout smetana
 object "<u>:InternshipModelManager" as IL {
   currentComparator: BY_ROLE
 }

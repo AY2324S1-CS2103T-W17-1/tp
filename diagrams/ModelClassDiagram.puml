@@ -1,24 +1,27 @@
 @startuml
+!pragma layout smetana
 !include style.puml
 skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
 Package Model as ModelPackage <<Rectangle>>{
-Class "<<interface>>\nReadOnlyAddressBook" as ReadOnlyAddressBook
+Class "<<interface>>\nReadOnlyInternshipBook" as ReadOnlyInternshipBook
 Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
 Class "<<interface>>\nModel" as Model
-Class AddressBook
+Class InternshipBook
 Class ModelManager
 Class UserPrefs
 
-Class UniquePersonList
-Class Person
-Class Address
-Class Email
-Class Name
-Class Phone
-Class Tag
+Class UniqueInternshipList
+Class Internship
+Class ApplicationStatus
+Class CompanyName
+Class Role
+Class Requirement
+Class StartDate
+Class Duration
+Class Deadline
 
 Class I #FFFFFF
 }
@@ -26,29 +29,27 @@ Class I #FFFFFF
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
-AddressBook .up.|> ReadOnlyAddressBook
+InternshipBook .up.|> ReadOnlyInternshipBook
 
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
-Model .left.> ReadOnlyAddressBook
-ModelManager -left-> "1" AddressBook
+Model .left.> ReadOnlyInternshipBook
+ModelManager -left-> "1" InternshipBook
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
-AddressBook *--> "1" UniquePersonList
-UniquePersonList --> "~* all" Person
-Person *--> Name
-Person *--> Phone
-Person *--> Email
-Person *--> Address
-Person *--> "*" Tag
+InternshipBook *--> "1" UniqueInternshipList
+UniqueInternshipList --> "~* all" Internship
+Internship *--> "1" CompanyName
+Internship *--> "1" Role
+Internship *--> "1" ApplicationStatus
+Internship *--> "1" StartDate
+Internship *--> "1" Deadline
+Internship *--> "1" Duration
+Internship *--> "*" Requirement
 
-Person -[hidden]up--> I
-UniquePersonList -[hidden]right-> I
+Internship -[hidden]up--> I
+UniqueInternshipList -[hidden]right-> I
 
-Name -[hidden]right-> Phone
-Phone -[hidden]right-> Address
-Address -[hidden]right-> Email
-
-ModelManager --> "~* filtered" Person
+ModelManager --> "~* filtered" Internship
 @enduml
