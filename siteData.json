@@ -114,7 +114,6 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "flagship-user-guide": "Flagship User Guide",
         "table-of-contents": "Table of Contents",
         "introduction": "Introduction",
         "using-this-guide": "Using this guide",
@@ -123,7 +122,6 @@
         "quick-start": "Quick Start",
         "commands-format-notes": "Commands Format Notes",
         "parameter-constraints": "Parameter constraints",
-        "commands": "Commands",
         "creating-an-internship-create": "Creating an Internship: create",
         "editing-an-internship-modify": "Editing an Internship: modify",
         "filter-internships-by-category-and-keyword-range-filter": "Filter Internships by Category and Keyword/Range: filter",
