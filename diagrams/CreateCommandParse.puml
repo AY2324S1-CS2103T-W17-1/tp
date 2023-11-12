@@ -6,7 +6,7 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Command Parsing Stage
 
-package "Internship Book" {
+package "Parser" {
     class InternshipBookParser as "InternshipBookParser"
 }
 
@@ -14,6 +14,6 @@ hide CreateCommand
 
 class UserInput as "create c/Google ro/SWE..."
 
-UserInput -right-> InternshipBookParser : parses
+UserInput - InternshipBookParser : < parses
 
 @enduml

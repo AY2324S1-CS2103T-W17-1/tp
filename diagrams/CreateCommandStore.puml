@@ -6,7 +6,7 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Internship Entry Storage Stage
 
-package "Internship Book" {
+package "Storage" {
     class InternshipStorage as "InternshipStorage"
 }
 
@@ -16,8 +16,8 @@ InternshipStorage -[hidden]right-> InternshipEntry
 
 hide InternshipEntry
 
-class StorageAction as "Storage Action: Entry Stored Successfully"
+class Internship as "Internship"
 
-StorageAction -up-> InternshipStorage : stores
+InternshipStorage - Internship : stores >
 
 @enduml

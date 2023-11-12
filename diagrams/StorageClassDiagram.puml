@@ -4,7 +4,7 @@ skinparam arrowThickness 1.1
 skinparam arrowColor STORAGE_COLOR
 skinparam classBackgroundColor STORAGE_COLOR
 
-package InternshipStorage as StoragePackage {
+package Storage as StoragePackage {
 
 package "InternshipUserPrefs Storage" #F4F6F6{
 Class "<<interface>>\nInternshipUserPrefsStorage" as UserPrefsStorage
