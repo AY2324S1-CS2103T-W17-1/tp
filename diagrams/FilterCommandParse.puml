@@ -1,26 +1,26 @@
 @startuml
 !pragma layout smetana
-object "<u>:InternshipModelManager" as IL {
-  currentComparator: BY_ROLE
+!include style.puml
+skinparam ClassFontColor #000000
+skinparam ClassBorderColor #000000
+skinparam ClassBackgroundColor #FFFFAA
+
+title Command Parsing Stage
+
+package "Internship Book" {
+    class InternshipBookParser as "InternshipBookParser"
 }
 
-object "<u>:Internship" as I1 {
-  companyName: "Citadel"
-  role: "Site Reliability Engineer"
+package "Command" {
+    class FilterCommand as "FilterCommand"
 }
 
-object "<u>:Internship" as I2 {
-  companyName: "Jane Street"
-  role: "Software Engineer"
-}
+InternshipBookParser -[hidden]right-> FilterCommand
 
-object "<u>:Internship" as I3 {
-  companyName: "Optiver"
-  role: "Algorithm Engineer"
-}
+hide FilterCommand
 
-IL -down-> I3
-IL -down-> I1
-IL -down-> I2
+class UserInput as "User Input: filter ro/jane"
+
+UserInput -down-> InternshipBookParser : parses
 
 @enduml

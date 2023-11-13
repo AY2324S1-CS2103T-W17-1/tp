@@ -7,16 +7,18 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Filter Command Execution Stage
 
-package "Internship Book" {
+package "Logic" {
     class InternshipLogicManager as "InternshipLogicManager"
-    class InternshipStorage as "InternshipStorage"
+}
+package "Model" {
+    class InternshipModel as "InternshipModel"
 }
 
 package "Command" {
     class FilterCommand as "FilterCommand"
 }
 
-InternshipLogicManager -down-> FilterCommand : executes
-FilterCommand -right-> InternshipStorage : filters based on criteria
-
-@enduml
+FilterCommand - InternshipLogicManager: executes <
+FilterCommand - InternshipModel : filters internship entries <
+InternshipModel -[hidden]up-> FilterCommand
+@endumlbv
