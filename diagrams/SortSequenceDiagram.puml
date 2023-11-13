@@ -14,10 +14,10 @@ participant ":InternshipBook" as InternshipBook MODEL_COLOR
 participant ":UniqueInternshipList" as UniqueInternshipList MODEL_COLOR
 
 end box
-[-> InternshipLogicManager : execute(sort co/ASC)
+[-> InternshipLogicManager : execute(sort ro/ASC)
 activate InternshipLogicManager
 
-InternshipLogicManager -> InternshipBookParser : parseCommand(sort co/ASC)
+InternshipLogicManager -> InternshipBookParser : parseCommand(sort ro/ASC)
 activate InternshipBookParser
 
 create SortCommand
