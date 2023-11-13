@@ -1,4 +1,5 @@
 @startuml
+!pragma layout smetana
 !include style.puml
 skinparam arrowThickness 1.1
 skinparam arrowColor LOGIC_COLOR_T4
@@ -13,7 +14,7 @@ Class "{abstract}\nCommand" as Command
 
 
 Class "<<interface>>\nLogic" as Logic
-Class LogicManager
+Class InternshipLogicManager
 }
 
 package Model {
@@ -26,21 +27,21 @@ package Storage {
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Logic
 
-LogicManager .right.|> Logic
-LogicManager -right->"1" InternshipBookParser
+InternshipLogicManager .right.|> Logic
+InternshipLogicManager -right->"1" InternshipBookParser
 InternshipBookParser ..> XYZCommand : creates >
 
 XYZCommand -up-|> Command
-LogicManager .left.> Command : executes >
+InternshipLogicManager .left.> Command : executes >
 
-LogicManager --> Model
-LogicManager --> Storage
+InternshipLogicManager --> Model
+InternshipLogicManager --> Storage
 Storage --[hidden] Model
 Command .[hidden]up.> Storage
 Command .right.> Model
-note right of XYZCommand: XYZCommand = AddCommand, \nFindCommand, etc
+note right of XYZCommand: XYZCommand = CreateCommand, \nFilterCommand, etc.
 
 Logic ..> CommandResult
-LogicManager .down.> CommandResult
+InternshipLogicManager .down.> CommandResult
 Command .up.> CommandResult : produces >
 @enduml
