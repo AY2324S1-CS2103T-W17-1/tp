@@ -6,7 +6,7 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Command Parsing Stage
 
-package "Internship Book" {
+package "Parser" {
     class InternshipBookParser as "InternshipBookParser"
 }
 
@@ -20,6 +20,6 @@ hide DeleteCommand
 
 class UserInput as "delete 1"
 
-UserInput -down-> InternshipBookParser : parses
+UserInput -down- InternshipBookParser : < parses
 
 @enduml

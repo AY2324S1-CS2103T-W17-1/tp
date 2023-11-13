@@ -6,16 +6,19 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Command Execution Stage
 
-package "Internship Book" {
+package "Logic" {
     class InternshipLogicManager as "InternshipLogicManager"
-    class InternshipStorage as "InternshipStorage"
+}
+
+package "Model" {
+    class InternshipModel as "InternshipModel"
 }
 
 package "Command" {
     class DeleteCommand as "DeleteCommand"
 }
 
-InternshipLogicManager -down-> DeleteCommand : executes
-DeleteCommand -right-> InternshipStorage : checks if internship exists\nand removes it
+InternshipLogicManager -down- DeleteCommand : > executes
+DeleteCommand -up- InternshipModel : < checks if internship exists\nand removes it
 
 @enduml
