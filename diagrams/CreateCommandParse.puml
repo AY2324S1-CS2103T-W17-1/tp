@@ -12,7 +12,7 @@ package "Parser" {
 
 hide CreateCommand
 
-class UserInput as "create c/Google ro/SWE..."
+class UserInput as "create c/Google ..."
 
 UserInput -up- InternshipBookParser : < parses
 

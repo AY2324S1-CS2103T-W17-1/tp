@@ -7,7 +7,7 @@ box Logic LOGIC_COLOR_T1
 participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
 participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
 participant ":CreateCommandParser" as CreateCommandParser LOGIC_COLOR
-participant "d:CreateCommand" as CreateCommand LOGIC_COLOR
+participant "c:CreateCommand" as CreateCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -19,10 +19,10 @@ box Storage STORAGE_COLOR_T3
 participant ":InternshipStorage" as Storage STORAGE_COLOR
 end box
 
-[-> InternshipLogicManager : execute("create c/Google ro/SWE ...")
+[-> InternshipLogicManager : execute("create c/Google ...")
 activate InternshipLogicManager
 
-InternshipLogicManager -> InternshipBookParser : parseCommand("create c/Google ro/SWE ...")
+InternshipLogicManager -> InternshipBookParser : parseCommand("create c/Google ...")
 activate InternshipBookParser
 
 create CreateCommandParser
@@ -32,7 +32,7 @@ activate CreateCommandParser
 CreateCommandParser --> InternshipBookParser
 deactivate CreateCommandParser
 
-InternshipBookParser -> CreateCommandParser : parse("c/Google ro/SWE ...")
+InternshipBookParser -> CreateCommandParser : parse("c/Google ...")
 activate CreateCommandParser
 
 create CreateCommand
