@@ -6,11 +6,11 @@ skinparam classBackgroundColor MODEL_COLOR
 
 Package Model as ModelPackage <<Rectangle>>{
 Class "<<interface>>\nReadOnlyInternshipBook" as ReadOnlyInternshipBook
-Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
+Class "<<interface>>\nReadOnlyInternshipUserPrefs" as ReadOnlyInternshipUserPrefs
 Class "<<interface>>\nInternshipModel" as Model
 Class InternshipBook
 Class InternshipModelManager
-Class UserPrefs
+Class InternshipUserPrefs
 
 Class UniqueInternshipList
 Class Internship
@@ -31,11 +31,11 @@ HiddenOutside ..> Model
 InternshipBook .up.|> ReadOnlyInternshipBook
 
 InternshipModelManager .up.|> Model
-Model .right.> ReadOnlyUserPrefs
+Model .right.> ReadOnlyInternshipUserPrefs
 Model .left.> ReadOnlyInternshipBook
 InternshipModelManager -left-> "1" InternshipBook
-InternshipModelManager -right-> "1" UserPrefs
-UserPrefs .up.|> ReadOnlyUserPrefs
+InternshipModelManager -right-> "1" InternshipUserPrefs
+InternshipUserPrefs .up.|> ReadOnlyInternshipUserPrefs
 
 InternshipBook *--> "1" UniqueInternshipList
 UniqueInternshipList --> "~* all" Internship
