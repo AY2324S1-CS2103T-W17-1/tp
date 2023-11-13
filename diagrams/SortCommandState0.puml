@@ -1,7 +1,7 @@
 @startuml
 
 object "<u>:InternshipModelManager" as IL {
-  currentComparator: BY_ROLE
+  currentComparator: BY_COMPANY
 }
 
 object "<u>:Internship" as I1 {

@@ -18,11 +18,11 @@ Class CommandBox
 Class PredicateComparatorDisplay
 }
 
-package InternshipModel <<Rectangle>> {
+package Model <<Rectangle>> {
 Class HiddenModel #FFFFFF
 }
 
-package InternshipLogic <<Rectangle>> {
+package Logic <<Rectangle>> {
 Class HiddenLogic #FFFFFF
 }
 
@@ -51,10 +51,10 @@ StatusBarFooter --|> UiPart
 HelpWindow --|> UiPart
 
 CommandBox ..> CommandExecuter
-InternshipCard ..> InternshipModel
-CommandExecuter ..> InternshipLogic
-UiManager -right-> InternshipLogic
-InternshipMainWindow -left-> InternshipLogic
+InternshipCard ..> Model
+CommandExecuter ..> Logic
+UiManager -right-> Logic
+InternshipMainWindow -left-> Logic
 
 InternshipListPanel -[hidden]left- HelpWindow
 HelpWindow -[hidden]left- CommandBox
