@@ -50,7 +50,7 @@ destroy DeleteCommandParser
 InternshipBookParser --> InternshipLogicManager : d
 deactivate InternshipBookParser
 
-InternshipLogicManager -> DeleteCommand : execute()
+InternshipLogicManager -> DeleteCommand : execute(model)
 activate DeleteCommand
 DeleteCommand -> Model : deleteInternship(1)
 activate Model

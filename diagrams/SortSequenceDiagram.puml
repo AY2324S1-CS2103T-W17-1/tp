@@ -30,7 +30,7 @@ deactivate SortCommand
 InternshipBookParser --> InternshipLogicManager : u
 deactivate InternshipBookParser
 
-InternshipLogicManager -> SortCommand : execute()
+InternshipLogicManager -> SortCommand : execute(model)
 activate SortCommand
 
 SortCommand -> InternshipModel : sortInternships(comparator)

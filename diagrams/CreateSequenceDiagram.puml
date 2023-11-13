@@ -51,7 +51,7 @@ destroy CreateCommandParser
 InternshipBookParser --> InternshipLogicManager : c
 deactivate InternshipBookParser
 
-InternshipLogicManager -> CreateCommand : execute()
+InternshipLogicManager -> CreateCommand : execute(model)
 activate CreateCommand
 
 CreateCommand -> InternshipModel : createInternship(toAdd)

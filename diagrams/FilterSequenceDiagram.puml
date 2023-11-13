@@ -46,7 +46,7 @@ destroy FilterCommandParser
 InternshipBookParser --> InternshipLogicManager : f
 deactivate InternshipBookParser
 
-InternshipLogicManager -> FilterCommand : execute()
+InternshipLogicManager -> FilterCommand : execute(model)
 activate FilterCommand
 FilterCommand -> Model : updateFilteredInternshipList(predicate), setFilterParameter(filterParameter), setFilterValue(filterValue)
 activate Model

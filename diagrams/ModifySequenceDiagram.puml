@@ -5,15 +5,51 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
     participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
+    participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
+    participant ":ModifyCommandParser" as ModifyCommandParser LOGIC_COLOR
     participant "m:ModifyCommand" as ModifyCommand LOGIC_COLOR
+    participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
     participant ":InternshipModel" as InternshipModel MODEL_COLOR
 end box
 
-[-> InternshipLogicManager : execute(modify 1 c/Jane Street ro/Backend Developer)
+box Storage STORAGE_COLOR_T3
+participant ":InternshipStorage" as Storage STORAGE_COLOR
+end box
+
+[-> InternshipLogicManager : execute("modify 1 c/Jane Street ...")
 activate InternshipLogicManager
+
+InternshipLogicManager -> InternshipBookParser : parseCommand("modify 1 c/Jane Street ...")
+activate InternshipBookParser
+
+create ModifyCommandParser
+InternshipBookParser -> ModifyCommandParser
+activate ModifyCommandParser
+
+ModifyCommandParser --> InternshipBookParser
+deactivate ModifyCommandParser
+
+InternshipBookParser -> ModifyCommandParser : parse("c/Jane Street ...")
+activate ModifyCommandParser
+
+create ModifyCommand
+ModifyCommandParser -> ModifyCommand
+activate ModifyCommand
+
+ModifyCommand --> ModifyCommandParser : m
+deactivate ModifyCommand
+
+ModifyCommandParser --> InternshipBookParser : m
+deactivate ModifyCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+ModifyCommandParser -[hidden]-> InternshipBookParser
+destroy ModifyCommandParser
+
+InternshipBookParser --> InternshipLogicManager : m
+deactivate InternshipBookParser
 
 InternshipLogicManager -> ModifyCommand : execute(model)
 activate ModifyCommand
@@ -24,36 +60,41 @@ activate InternshipModel
 InternshipModel --> ModifyCommand : lastShownList
 deactivate InternshipModel
 
-alt index out of bounds
-    ModifyCommand --> InternshipLogicManager : CommandException(Messages.MESSAGE_INVALID_INTERNSHIP_DISPLAYED_INDEX)
-else
 
-    ModifyCommand -> ModifyCommand : createEditedInternship(internshipToEdit, editInternshipDescriptor)
-    ModifyCommand -> InternshipModel : hasInternship(editedInternship)
-    activate InternshipModel
+ModifyCommand -> ModifyCommand : createEditedInternship(internshipToEdit, editInternshipDescriptor)
+ModifyCommand -> InternshipModel : hasInternship(editedInternship)
+activate InternshipModel
 
-    alt internship exists (duplicate)
-        InternshipModel --> ModifyCommand : true
-    else
-        InternshipModel --> ModifyCommand : false
-    end
+InternshipModel --> ModifyCommand : false
+deactivate InternshipModel
 
-    deactivate InternshipModel
+ModifyCommand -> InternshipModel : setInternship(internshipToEdit, editedInternship)
+activate InternshipModel
 
-    alt editedInternship is unique
-        ModifyCommand -> InternshipModel : setInternship(internshipToEdit, editedInternship)
-        activate InternshipModel
+InternshipModel --> ModifyCommand
+deactivate InternshipModel
 
-        InternshipModel --> ModifyCommand
-        deactivate InternshipModel
-    else
-        ModifyCommand --> InternshipLogicManager : CommandException(MESSAGE_DUPLICATE_INTERNSHIP)
-    end
+create CommandResult
+ModifyCommand -> CommandResult
+activate CommandResult
 
-    ModifyCommand --> InternshipLogicManager : CommandResult
-end
+CommandResult --> ModifyCommand
+deactivate CommandResult
 
+ModifyCommand --> InternshipLogicManager : result
 deactivate ModifyCommand
+
+InternshipLogicManager -> InternshipModel : getInternshipBook()
+activate InternshipModel
+
+InternshipModel --> InternshipLogicManager : internshipBook
+deactivate InternshipModel
+
+InternshipLogicManager -> Storage : saveInternshipBook(internshipBook)
+activate Storage
+
+Storage --> InternshipLogicManager
+deactivate Storage
 
 [<--InternshipLogicManager
 deactivate InternshipLogicManager
