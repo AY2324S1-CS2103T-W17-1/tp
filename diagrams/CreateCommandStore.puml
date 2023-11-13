@@ -6,18 +6,16 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Internship Entry Storage Stage
 
+package "Model" {
+    class InternshipModel as "InternshipModel"
+}
+
 package "Storage" {
     class InternshipStorage as "InternshipStorage"
 }
 
-class InternshipEntry as "InternshipEntry:\nJane Street, Coffee maker"
-
-InternshipStorage -[hidden]right-> InternshipEntry
-
-hide InternshipEntry
-
-class Internship as "Internship"
-
-InternshipStorage - Internship : stores >
+class ReadOnlyInternshipBook as "ReadOnlyInternshipBook"
+ReadOnlyInternshipBook -up- InternshipModel: < Retrieves
+ReadOnlyInternshipBook -up- InternshipStorage : < Uses to update storage
 
 @enduml

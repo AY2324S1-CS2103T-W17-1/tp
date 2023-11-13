@@ -18,9 +18,7 @@ package "Command" {
     class CreateCommand as "CreateCommand"
 }
 
-CreateCommand - InternshipLogicManager: executes <
-CreateCommand - InternshipModel : stores if entry not duplicate <
-InternshipModel -[hidden]up-> CreateCommand
-
+InternshipLogicManager -down- CreateCommand : > executes
+CreateCommand -up- InternshipModel : < checks if duplicate entry exists\nand creates new entry if unique
 
 @enduml
