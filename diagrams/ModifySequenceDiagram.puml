@@ -1,28 +1,28 @@
 @startuml
-
 !include style.puml
+skinparam DefaultFontSize 30
 skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
-    participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
-    participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
-    participant ":ModifyCommandParser" as ModifyCommandParser LOGIC_COLOR
-    participant "m:ModifyCommand" as ModifyCommand LOGIC_COLOR
-    participant ":CommandResult" as CommandResult LOGIC_COLOR
+participant ":InternshipLogicManager" as InternshipLogicManager LOGIC_COLOR
+participant ":InternshipBookParser" as InternshipBookParser LOGIC_COLOR
+participant ":ModifyCommandParser" as ModifyCommandParser LOGIC_COLOR
+participant "m:ModifyCommand" as ModifyCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-    participant ":InternshipModel" as InternshipModel MODEL_COLOR
+participant ":InternshipModel" as InternshipModel MODEL_COLOR
 end box
 
 box Storage STORAGE_COLOR_T3
 participant ":InternshipStorage" as Storage STORAGE_COLOR
 end box
 
-[-> InternshipLogicManager : execute("modify 1 c/Jane Street ...")
+[-> InternshipLogicManager : execute("modify 1 c/Google ...")
 activate InternshipLogicManager
 
-InternshipLogicManager -> InternshipBookParser : parseCommand("modify 1 c/Jane Street ...")
+InternshipLogicManager -> InternshipBookParser : parseCommand("modify 1 c/Google ...")
 activate InternshipBookParser
 
 create ModifyCommandParser
@@ -32,7 +32,7 @@ activate ModifyCommandParser
 ModifyCommandParser --> InternshipBookParser
 deactivate ModifyCommandParser
 
-InternshipBookParser -> ModifyCommandParser : parse("c/Jane Street ...")
+InternshipBookParser -> ModifyCommandParser : parse("1 c/Google ...")
 activate ModifyCommandParser
 
 create ModifyCommand
@@ -51,27 +51,13 @@ destroy ModifyCommandParser
 InternshipBookParser --> InternshipLogicManager : m
 deactivate InternshipBookParser
 
-InternshipLogicManager -> ModifyCommand : execute(model)
+InternshipLogicManager -> ModifyCommand : execute()
 activate ModifyCommand
 
-ModifyCommand -> InternshipModel : getFilteredInternshipList()
+ModifyCommand -> InternshipModel : modifyInternship(internshipToEdit, editedInternship)
 activate InternshipModel
 
-InternshipModel --> ModifyCommand : lastShownList
-deactivate InternshipModel
-
-
-ModifyCommand -> ModifyCommand : createEditedInternship(internshipToEdit, editInternshipDescriptor)
-ModifyCommand -> InternshipModel : hasInternship(editedInternship)
-activate InternshipModel
-
-InternshipModel --> ModifyCommand : false
-deactivate InternshipModel
-
-ModifyCommand -> InternshipModel : setInternship(internshipToEdit, editedInternship)
-activate InternshipModel
-
-InternshipModel --> ModifyCommand
+InternshipModel --> ModifyCommand : internshipBook
 deactivate InternshipModel
 
 create CommandResult
@@ -81,14 +67,8 @@ activate CommandResult
 CommandResult --> ModifyCommand
 deactivate CommandResult
 
-ModifyCommand --> InternshipLogicManager : result
+ModifyCommand --> InternshipLogicManager : commandResult
 deactivate ModifyCommand
-
-InternshipLogicManager -> InternshipModel : getInternshipBook()
-activate InternshipModel
-
-InternshipModel --> InternshipLogicManager : internshipBook
-deactivate InternshipModel
 
 InternshipLogicManager -> Storage : saveInternshipBook(internshipBook)
 activate Storage
@@ -96,7 +76,6 @@ activate Storage
 Storage --> InternshipLogicManager
 deactivate Storage
 
-[<--InternshipLogicManager
+[<-- InternshipLogicManager
 deactivate InternshipLogicManager
-
 @enduml
