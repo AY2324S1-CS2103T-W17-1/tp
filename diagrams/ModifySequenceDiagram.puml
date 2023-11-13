@@ -51,7 +51,7 @@ destroy ModifyCommandParser
 InternshipBookParser --> InternshipLogicManager : m
 deactivate InternshipBookParser
 
-InternshipLogicManager -> ModifyCommand : execute()
+InternshipLogicManager -> ModifyCommand : execute(model)
 activate ModifyCommand
 
 ModifyCommand -> InternshipModel : modifyInternship(internshipToEdit, editedInternship)
