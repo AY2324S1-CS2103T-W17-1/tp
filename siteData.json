@@ -68,7 +68,10 @@
         "non-functional-requirements": "Non-Functional Requirements",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch": "Launch",
-        "creating-an-internship-entry": "Creating an internship entry",
+        "creating-internship-entries": "Creating internship entries",
+        "modifying-internship-entries": "Modifying internship entries",
+        "filtering-internship-entries": "Filtering internship entries",
+        "sorting-internship-entries": "Sorting internship entries",
         "deleting-an-internship": "Deleting an internship",
         "saving-data": "Saving data"
       },
