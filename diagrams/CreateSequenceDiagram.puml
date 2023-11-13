@@ -1,5 +1,6 @@
 @startuml
 !include style.puml
+skinparam DefaultFontSize 30
 skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
@@ -14,7 +15,7 @@ box Model MODEL_COLOR_T1
 participant ":InternshipModel" as InternshipModel MODEL_COLOR
 end box
 
-box Storage STORAGE_COLOR_T1
+box Storage STORAGE_COLOR_T3
 participant ":InternshipStorage" as Storage STORAGE_COLOR
 end box
 

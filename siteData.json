@@ -48,7 +48,7 @@
         "ui-component": "UI component",
         "logic-component": "Logic component",
         "model-component": "Model component",
-        "internshipstorage-component": "InternshipStorage component",
+        "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "create-command": "Create command",
