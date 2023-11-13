@@ -1,4 +1,5 @@
 @startuml
+!pragma layout smetana
 !include style.puml
 skinparam ClassFontColor #000000
 skinparam ClassBorderColor #000000
@@ -10,7 +11,7 @@ package "Internship Book" {
     class InternshipStorage as "InternshipStorage"
 }
 
-class InternshipEntry as "InternshipEntry:\nJane Street, Coffee maker"
+class InternshipEntry as "InternshipEntry:\nJane Street, Backend Developer"
 
 InternshipStorage -[hidden]right-> InternshipEntry
 

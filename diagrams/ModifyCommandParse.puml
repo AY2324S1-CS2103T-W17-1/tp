@@ -1,4 +1,5 @@
 @startuml
+!pragma layout smetana
 !include style.puml
 skinparam ClassFontColor #000000
 skinparam ClassBorderColor #000000
@@ -6,7 +7,7 @@ skinparam ClassBackgroundColor #FFFFAA
 
 title Command Parsing Stage
 
-package "Internship Book" {
+package "Parser" {
     class InternshipBookParser as "InternshipBookParser"
 }
 
@@ -18,7 +19,7 @@ InternshipBookParser -[hidden]right-> ModifyCommand
 
 hide ModifyCommand
 
-class UserInput as "User Input: modify 1 c/Jane Street ro/Coffee maker..."
+class UserInput as "User Input: modify 1 c/Jane Street ro/Backend Developer"
 
 UserInput -down-> InternshipBookParser : parses
 

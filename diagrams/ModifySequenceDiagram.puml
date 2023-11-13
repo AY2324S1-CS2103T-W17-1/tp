@@ -12,7 +12,7 @@ box Model MODEL_COLOR_T1
     participant ":InternshipModel" as InternshipModel MODEL_COLOR
 end box
 
-[-> InternshipLogicManager : execute(modify 1 c/Jane Street ro/Coffee maker ...)
+[-> InternshipLogicManager : execute(modify 1 c/Jane Street ro/Backend Developer)
 activate InternshipLogicManager
 
 InternshipLogicManager -> ModifyCommand : execute(model)
