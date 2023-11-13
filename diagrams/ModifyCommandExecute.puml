@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 !include style.puml
 skinparam ClassFontColor #000000
 skinparam ClassBorderColor #000000
@@ -16,7 +15,7 @@ package "Command" {
     class ModifyCommand as "ModifyCommand"
 }
 
-InternshipLogicManager -down-> ModifyCommand : executes
-ModifyCommand -right-> InternshipStorage : checks for duplicates\nand edits original copy if unique
+InternshipLogicManager -down- ModifyCommand : > executes
+ModifyCommand -up- InternshipStorage : < checks for duplicates\nand replaces original copy with edited one if unique
 
 @enduml

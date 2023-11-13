@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 object "<u>:InternshipModelManager" as IL {
   currentPredicate: PREDICATE_SHOW_ALL_INTERNSHIPS
   currentFilterParameter: "default"

@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 object "<u>:InternshipModelManager" as IL {
   currentPredicate: CompanyNameContainsKeywordsPredicate
   currentFilterParameter: "c/"

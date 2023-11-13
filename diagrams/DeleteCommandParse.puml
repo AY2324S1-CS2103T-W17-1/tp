@@ -20,6 +20,6 @@ hide DeleteCommand
 
 class UserInput as "delete 1"
 
-UserInput -down- InternshipBookParser : < parses
+UserInput -up- InternshipBookParser : < parses
 
 @enduml

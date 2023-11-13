@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 !include style.puml
 skinparam ClassFontColor #000000
 skinparam ClassBorderColor #000000
@@ -16,9 +15,8 @@ package "Model" {
 
 package "Command" {
     class FilterCommand as "FilterCommand"
-}
 
-FilterCommand - InternshipLogicManager: executes <
-FilterCommand - InternshipModel : filters internship entries <
+InternshipLogicManager -down- FilterCommand : > executes
+FilterCommand -up- InternshipModel : > filters internship entries
 InternshipModel -[hidden]up-> FilterCommand
-@endumlbv
+@enduml

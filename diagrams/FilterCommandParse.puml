@@ -1,5 +1,4 @@
 @startuml
-!pragma layout smetana
 !include style.puml
 skinparam ClassFontColor #000000
 skinparam ClassBorderColor #000000
@@ -19,8 +18,8 @@ InternshipBookParser -[hidden]right-> FilterCommand
 
 hide FilterCommand
 
-class UserInput as "User Input: filter c/citadel"
+class UserInput as "filter c/citadel"
 
-UserInput -down-> InternshipBookParser : parses
+UserInput -up- InternshipBookParser : < parses
 
 @enduml
