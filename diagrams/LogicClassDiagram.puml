@@ -10,10 +10,10 @@ package Logic as LogicPackage {
 Class InternshipBookParser
 Class XYZCommand
 Class CommandResult
-Class "{abstract}\nCommand" as Command
+Class "{abstract}\nInternshipCommand" as InternshipCommand
 
 
-Class "<<interface>>\nLogic" as Logic
+Class "<<interface>>\nInternshipLogic" as InternshipLogic
 Class InternshipLogicManager
 }
 
@@ -25,23 +25,23 @@ package Storage {
 }
 
 Class HiddenOutside #FFFFFF
-HiddenOutside ..> Logic
+HiddenOutside ..> InternshipLogic
 
-InternshipLogicManager .right.|> Logic
+InternshipLogicManager .right.|> InternshipLogic
 InternshipLogicManager -right->"1" InternshipBookParser
 InternshipBookParser ..> XYZCommand : creates >
 
-XYZCommand -up-|> Command
-InternshipLogicManager .left.> Command : executes >
+XYZCommand -up-|> InternshipCommand
+InternshipLogicManager .left.> InternshipCommand : executes >
 
 InternshipLogicManager --> Model
 InternshipLogicManager --> Storage
 Storage --[hidden] Model
-Command .[hidden]up.> Storage
-Command .right.> Model
+InternshipCommand .[hidden]up.> Storage
+InternshipCommand .right.> Model
 note right of XYZCommand: XYZCommand = CreateCommand, \nFilterCommand, etc.
 
-Logic ..> CommandResult
+InternshipLogic ..> CommandResult
 InternshipLogicManager .down.> CommandResult
-Command .up.> CommandResult : produces >
+InternshipCommand .up.> CommandResult : produces >
 @enduml
