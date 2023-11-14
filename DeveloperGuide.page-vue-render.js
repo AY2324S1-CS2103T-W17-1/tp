@@ -401,7 +401,7 @@ with(this){return _c('ol',[_c('li',[_v("User requests to create an internship en
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format")]),_v(" "),_c('ul',[_c('li',[_v("1a1. Flagship shows an error message.\nUse case resumes from step 1.")])])]),_v(" "),_c('li',[_c('p',[_v("1b. Internship entry has a duplicate already stored in Flagship.")]),_v(" "),_c('ul',[_c('li',[_v("1b1. Flagship shows an error message.\nUse case resumes from step 1.")])])]),_v(" "),_c('li',[_c('p',[_v("1c. Necessary fields in the command are missing.")]),_v(" "),_c('ul',[_c('li',[_v("1c1. Flagship shows an error message.\nUse case resumes from step 1.")])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1b. Internship entry has a duplicate already stored in Flagship.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1b1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1c. Necessary fields in the command are missing.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1c1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("UC2: Delete an internship")])])}
@@ -434,7 +434,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to read internship
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. The list is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])]),_v(" "),_c('li',[_c('p',[_v("3a. The given index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 3.")])])])]),_v(" "),_c('li',[_c('p',[_v("3b. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3b1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 3.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. The list is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])]),_v(" "),_c('li',[_c('p',[_v("3a. The given index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 3.")])])])]),_v(" "),_c('li',[_c('p',[_v("3b. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3b1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 3.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticStyle:{"float":"right"}},[_c('a',{attrs:{"href":"#table-of-contents"}},[_c('img',{attrs:{"src":"/tp/images/flagshipLogo.png","alt":"Flagship Logo","width":"30","height":"30"}})])])}
@@ -452,7 +452,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to filter internsh
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1b. The given index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1b1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("2a. No matching application is found and list is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1b. The given index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1b1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("2a. No matching application is found and list is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("UC5: Sort an internship")])])}
@@ -467,7 +467,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to sort internship
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1b. List is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. Command is of invalid format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1. Flagship shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes from step 1.")])])])]),_v(" "),_c('li',[_c('p',[_v("1b. List is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticStyle:{"float":"right"}},[_c('a',{attrs:{"href":"#table-of-contents"}},[_c('img',{attrs:{"src":"/tp/images/flagshipLogo.png","alt":"Flagship Logo","width":"30","height":"30"}})])])}
@@ -569,6 +569,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('p',[_c('strong',[_v("Prerequistes")]),_v(": Before each test, the most recent Flagship data file should be valid and contain at least 1 internship entry. "),_c('br'),_v("\nAccess the data file in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("[JAR file location]/data/internshipBook.json")]),_v(" using a text editor of your choice.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: Invalid formatting. Delete all text in the JSON file and replace with the text "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("test")]),_v(". "),_c('br'),_v("\nExpected: Flagship initialises with an empty internship entry list. An error message from the logger reports a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("JsonParseException")]),_v(".")])]),_v(" "),_c('li',[_c('p',[_v("Test case: Invalid values. Find a valid internship entry and edit the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("duration")]),_v(" field to a value of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("3test")]),_v(". "),_c('br'),_v("\nExpected: Flagship initialises with an empty internship entry list. An error message from the logger reports an illegal value found for the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("duration")]),_v(" field.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: Missing parameters. Find a valid internship entry and remove the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deadline")]),_v(" field completely. "),_c('br'),_v("\nExpected: Flagship initialises with an empty internship entry list. An error message from the logger reports a missing "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deadline")]),_v(" field.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: Duplicate internship entries. Find a valid internship entry, select the entire entry and copy and paste it. "),_c('br'),_v("\nExpected: Flagship initialises with an empty internship entry list. An error message from the logger reports duplicate internship entries.")])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 9:06:45 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 12:44:26 GMT+8]")])])])}
 }];
   
